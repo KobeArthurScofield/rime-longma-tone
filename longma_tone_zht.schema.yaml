@@ -1,0 +1,145 @@
+# Rime schema
+# encoding: utf-8
+
+# Longma Tone - Minimized version
+# Original schema author: 晡時之光
+# Minimized schema extraction: Kobe Arthur Scofield
+
+schema:
+  name: '龍碼音調輸入法（無輔助碼）'
+  schema_id: longma_tone_zht
+  author:
+    - '原著者 晡時之光'
+    - '重新整理及打包 Kobe Arthur Scofield'
+  description: |
+    龍碼音調輸入法
+    將帶有音調的拼音拆分成聲母及帶有音調的韻母兩部分，分別分散到 26 鍵鍵盤上以提高輸入效率。
+    本方案僅使用原龍碼音調輸入法的音碼部分，形碼輔助未使用。
+  dependencies:
+    - terra_pinyin
+    - luna_pinyin
+  version: '1.0.2'    # 2025-01
+
+switches:
+  - name: ascii_mode
+    states: ['中', '英']
+  - name: full_shape
+    states: ['半角', '全角']
+  - name: ascii_punct
+    states: ['。，', '. , ']
+  - options:
+      - zh_trad
+      - zh_tw
+      - zh_hk
+    states:
+      - 漢 繁體
+      - 中 台灣
+      - 中 香港澳門
+  - name: extended_charset
+    states: ['基本字集', '全部字集']
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - fluid_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@luna_pinyin
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - table_translator@custom_phrase
+    - script_translator
+    - script_translator@luna_pinyin
+  filters:
+    - simplifier@zh_trad
+    - simplifier@zh_tw
+    - simplifier@zh_hk
+    - cjk_minifier
+    - uniquifier
+    - reverse_lookup_filter@longma_reverse_lookup
+
+speller:
+  alphabet: qwertyuiopasdfghjklzxcvbnm
+  delimiter: " ';"
+  auto_select: false
+  use_space: true
+  algebra:
+    __patch:
+      - longma_tone:/algebra/main?
+
+translator:
+  enable_charset_filter: true
+  enable_sentence: true
+  enable_user_dict: true
+  dictionary: terra_pinyin
+  prism: longma_tone_minimized
+  user_dict: longma_tone_zht_user
+  db_class: userdb
+  spelling_hints: 6
+  always_show_comments: true
+  contextual_suggestions: true
+
+custom_phrase:
+  dictionary: ""
+  user_dict: longma_tone_custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+
+luna_pinyin:
+  tag: luna_pinyin
+  dictionary: luna_pinyin
+  prefix: "`"
+  suffix: ";"
+  tips: 拼音
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+longma_reverse_lookup:
+  tags: [ luna_pinyin ]
+  overwrite_comment: false
+  dictionary: terra_pinyin
+
+zh_trad:
+  option_name: zh_trad
+  opencc_config: tw2t.json
+  tips: all
+
+zh_tw:
+  option_name: zh_tw
+  opencc_config: t2tw.json
+  tips: all
+
+zh_hk:
+  option_name: zh_hk
+  opencc_config: t2hk.json
+  tips: all
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "`[a-z]*$"
+
+grammar:
+  language: zh-hant-t-essay-bgw
+  collocation_max_length: 4
+  collocation_min_length: 3

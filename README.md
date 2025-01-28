@@ -10,7 +10,7 @@
 
 ## 注意
 
-该输入法目前使用拼写运算完成输入，且大部分复用 RIME 本身架构中的公共组件，因此更新八股文即同时更新词库。
+该输入法目前使用拼写运算完成输入，且大部分复用 RIME 本身架构中的公共组件，因此更新 [℞八股文](https://github.com/rime/rime-essay) 即同时更新词库。
 
 本方案本身依赖 [℞地球拼音](https://github.com/rime/rime-terra-pinyin) 。计划实现基于 [℞朙月拼音](https://github.com/rime/rime-luna-pinyin) 的反查。
 

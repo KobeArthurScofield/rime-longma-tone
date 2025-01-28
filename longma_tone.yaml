@@ -8,7 +8,6 @@
 algebra:
   main:
     __append:
-      - derive/^([jqxy])(u)([12345])$/$1v$3/
       - derive/^(e)(r[12345])$/$1$1$2/
       - derive/^([aoe])([12345])$/$1$1$2/
       - derive/^([aoe])([ioun][12345])$/$1$1$2/

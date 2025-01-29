@@ -18,7 +18,7 @@ schema:
   dependencies:
     - terra_pinyin
     - luna_pinyin
-  version: '1.0.2'    # 2025-01
+  version: '1.0.4'
 
 switches:
   - name: ascii_mode
@@ -33,8 +33,6 @@ switches:
     states:
       - 汉 简体
       - 中 中国
-  - name: extended_charset
-    states: ['基本字集', '全部字集']
 
 engine:
   processors:
@@ -62,7 +60,6 @@ engine:
   filters:
     - simplifier@zh_simp
     - simplifier@zh_cn
-    - cjk_minifier
     - uniquifier
     - reverse_lookup_filter@longma_reverse_lookup
 
@@ -86,6 +83,8 @@ translator:
   spelling_hints: 6
   always_show_comments: true
   contextual_suggestions: true
+  max_homophones: 7
+  max_homographs: 7
 
 custom_phrase:
   dictionary: ""
@@ -133,5 +132,3 @@ recognizer:
 
 grammar:
   language: zh-hans-t-essay-bgw
-  collocation_max_length: 4
-  collocation_min_length: 3

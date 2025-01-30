@@ -6,6 +6,7 @@ recipe:
     龍碼音調輸入法
 
 install_files: >-
+  essay.txt
   longma_tone.suppliment_*.dict.yaml
   longma_tone.custom_pharse.yaml
   longma_tone.share.yaml

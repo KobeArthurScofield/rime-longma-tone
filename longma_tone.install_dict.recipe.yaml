@@ -6,5 +6,6 @@ recipe:
     龍碼音調輸入法 更新詞庫
 
 install_files: >-
+  essay.txt
   longma_tone.suppliment_*.dict.yaml
   zh-han*-t-essay-bg*.gram

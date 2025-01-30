@@ -1,0 +1,87 @@
+# Rime schema
+# encoding: utf-8
+
+# Longma Tone - Minimized version
+# Original schema author: 晡時之光
+# Minimized schema extraction: Kobe Arthur Scofield
+
+schema:
+  name: '龍碼音調輸入法'
+  schema_id: longma_tone.zht
+  author:
+    - '原著者 晡時之光'
+    - '重新整理及打包 Kobe Arthur Scofield'
+  description: |
+    龍碼音調輸入法
+    將帶有音調的拼音拆分成聲母及帶有音調的韻母兩部分，分別分散到 26 鍵鍵盤上以提高輸入效率。
+    本方案僅使用原龍碼音調輸入法的音碼部分，形碼輔助未使用。
+  version: '1.2.0.1589'
+  dependencies:
+    - terra_pinyin
+
+switches:
+  - name: ascii_mode
+    states: ['中', '英']
+  - name: full_shape
+    states: ['半角', '全角']
+  - name: ascii_punct
+    states: ['。，', '. , ']
+  - options:
+      - zh_trad
+      - zh_tw
+      - zh_hk
+    states:
+      - 漢 繁體
+      - 中 台灣
+      - 中 香港澳門
+
+engine:
+  __include: longma_tone.share.yaml:/engines?
+  __patch:
+    processors/+:
+      - fluid_editor
+  filters:
+    - simplifier@zh_trad
+    - simplifier@zh_tw
+    - simplifier@zh_hk
+    - uniquifier
+
+speller:
+  __include: longma_tone.share.yaml:/speller?
+
+translator:
+  __include: longma_tone.share.yaml:/translator?
+  user_dict: longma_tone.zht
+
+custom_phrase:
+  __include: longma_tone.share.yaml:/custom_phrase?
+
+zh_trad:
+  option_name: zh_trad
+  opencc_config: tw2t.json
+  tips: all
+
+zh_tw:
+  option_name: zh_tw
+  opencc_config: t2tw.json
+  tips: all
+
+zh_hk:
+  option_name: zh_hk
+  opencc_config: t2hk.json
+  tips: all
+
+grammar:
+  language: zh-hant-t-essay-bgw
+
+punctuator:
+  __include: longma_tone.share.yaml:/punctuator?
+
+key_binder:
+  __include: longma_tone.share.yaml:/key_binder?
+
+recognizer:
+  __include: longma_tone.share.yaml:/recognizer?
+
+menu:
+  __include: longma_tone.share.yaml:/menu?

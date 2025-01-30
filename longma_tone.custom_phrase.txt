@@ -1,6 +1,6 @@
 # Rime table
 # coding: utf-8
-#@db/db_name	longma_tone_custom_phrase
+#@db/db_name	longma_tone.custom_phrase
 #@db/db_type	tabledb
 #
 # 龍碼方案自定義短語
@@ -13,9 +13,11 @@
 #
 # 示例：
 秩	rank	0
-中國科學技術大學	ustc	0
-中國科學院大學	ucas	0
-西安交通大學	xjtu	0
-上海交通大學	sjtu	0
-哈爾濱工業大學	hit	0
-復旦大學	fdu	0
+大學英語考試	cet	0
+在版編目	cip	0
+傳真	fax	0
+美國國家導彈防禦系統	nmd	0
+中國中央電視臺	cctv	0
+嚴重急性呼吸綜合徵	sars	0
+有線電視	catv	0
+高級管理人員工商管理碩士	emba	0

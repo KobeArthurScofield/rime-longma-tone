@@ -1,0 +1,13 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: rime-longma-tone
+  description: >-
+    龍碼音調輸入法
+
+install_files: >-
+  longma_tone.suppliment_*.dict.yaml
+  longma_tone.custom_pharse.yaml
+  longma_tone.share.yaml
+  longma_tone.*.schema.yaml
+  zh-han*-t-essay-bg*.gram

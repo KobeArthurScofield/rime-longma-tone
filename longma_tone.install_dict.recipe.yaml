@@ -1,0 +1,10 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: rime-longma-tone
+  description: >-
+    龍碼音調輸入法 更新詞庫
+
+install_files: >-
+  longma_tone.suppliment_*.dict.yaml
+  zh-han*-t-essay-bg*.gram

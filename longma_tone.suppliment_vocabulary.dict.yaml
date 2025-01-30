@@ -1,0 +1,43 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Longma Tones - 龍碼音調
+#
+# * 2025-01-29  Kobe Arthur Scofield
+#
+# referenced works:
+# 《詩經・國風・邶・擊鼓》
+#
+# license:
+# creative commons attribution-share alike 4.0
+# http://creativecommons.org/licenses/by-sa/4.0/
+#
+
+---
+name: longma_tone.suppliment_vocabulary
+version: "2025.01.30"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Example vocabularies
+擊鼓其鏜	ji1 gu3 qi2 tang1	100%
+踴躍用兵	yong3 yue4 yong4 bing1	100%
+土國城漕	tu5 guo2 cheng2 cao2	100%
+我獨南行	wo3 du2 nan2 xing2	100%
+從孫子仲	cong2 sun1 zi3 zhong4	100%
+平陳與宋	ping2 chen2 yu3 song4	100%
+不我以歸	bu4 wo3 yi3 gui1	100%
+憂心有忡	you1 xin1 you3 chong1	100%
+爰居爰處	yuan2 ju1 yuan2 chu3	100%
+爰喪其馬	yuan2 sang4 qi2 ma3	100%
+于以求之	yu2 yi3 qiu2 zhi1	100%
+于林之下	yu2 lin2 zhi1 xia4	100%
+死生契闊	si3 sheng1 qie4 kuo4	100%
+與子成說	yu3 zi3 cheng2 shuo1	100%
+執子之手	zhi2 zi3 zhi1 shou3	100%
+與子偕老	yu3 zi3 xie2 lao3	100%
+于嗟闊兮	xu1 jie1 kuo4 xi1	100%
+不我活兮	bu4 wo3 huo2 xi1	100%
+于嗟洵兮	xu1 jie1 xun2 xi1	100%
+不我信兮	bu4 wo3 xin4 xi1	100%

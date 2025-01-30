@@ -36,7 +36,7 @@ switches:
       - 中 香港澳門
 
 engine:
-  __include: longma_tone.share.yaml:/engines?
+  __include: longma_tone.share.yaml:/engines
   __patch:
     processors/+:
       - fluid_editor
@@ -47,14 +47,14 @@ engine:
     - uniquifier
 
 speller:
-  __include: longma_tone.share.yaml:/speller?
+  __include: longma_tone.share.yaml:/speller
 
 translator:
-  __include: longma_tone.share.yaml:/translator?
+  __include: longma_tone.share.yaml:/translator
   user_dict: longma_tone.zht
 
 custom_phrase:
-  __include: longma_tone.share.yaml:/custom_phrase?
+  __include: longma_tone.share.yaml:/custom_phrase
 
 zh_trad:
   option_name: zh_trad
@@ -75,13 +75,13 @@ grammar:
   language: zh-hant-t-essay-bgw
 
 punctuator:
-  __include: longma_tone.share.yaml:/punctuator?
+  __include: longma_tone.share.yaml:/punctuator
 
 key_binder:
-  __include: longma_tone.share.yaml:/key_binder?
+  __include: longma_tone.share.yaml:/key_binder
 
 recognizer:
-  __include: longma_tone.share.yaml:/recognizer?
+  __include: longma_tone.share.yaml:/recognizer
 
 menu:
-  __include: longma_tone.share.yaml:/menu?
+  __include: longma_tone.share.yaml:/menu

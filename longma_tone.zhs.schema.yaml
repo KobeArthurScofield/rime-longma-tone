@@ -17,7 +17,7 @@ schema:
     本方案仅使用原龙码音调输入法的音码部分，形码辅助未使用。
   version: '1.2.0.1589'
   dependencies:
-    - terra_pinyin
+    - stroke
 
 switches:
   - name: ascii_mode
@@ -42,6 +42,7 @@ engine:
     - simplifier@zh_simp
     - simplifier@zh_cn
     - uniquifier
+    - reverse_lookup_filter@longma_tone_reverse_lookup
 
 speller:
   __include: longma_tone.share.yaml:/speller
@@ -74,6 +75,12 @@ key_binder:
 
 recognizer:
   __include: longma_tone.share.yaml:/recognizer
+
+stroke:
+  __include: longma_tone.share.yaml:/stroke?
+
+longma_tone_reverse_lookup:
+  __include: longma_tone.share.yaml:/longma_tone_reverse_lookup?
 
 menu:
   __include: longma_tone.share.yaml:/menu
